@@ -8,13 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbHandler extends SQLiteOpenHelper {
     public static final String DBName = "test.db";
+    public static final String Table ="User";
     public DbHandler( Context context){
         super(context, DBName, null, 1);
     }
     // raw data base created for example
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String TableName = "CREATE TABLE "+DBName+"USER(ID INTEGER PRIMARY KEY AUTOINCREMENT ,USERNAME TEXT,PASSWORD TEXT);";
+        String TableName = "CREATE TABLE "+Table+" (ID INTEGER PRIMARY KEY AUTOINCREMENT ,USERNAME TEXT,PASSWORD TEXT);";
         sqLiteDatabase.execSQL(TableName);
     }
 
